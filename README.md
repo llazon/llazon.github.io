@@ -28,7 +28,6 @@ Face time - a little face time goes a long way, especially when working remote a
 Access to product teams - I was very impressed with the access that SmugMug has to the product teams at AWS.  They were genuinely interested in how we are using their different products and the challenges that we face.  We had the right people in the room to offer both cost and technical solutions right there.  If we need to consult with these teams as we are designing solutions or running into issues, they would be more than happy to work with us throughout the process.
 
 AWS Credits - there was some nice swag floating around re:Invent, but an easy one to bring back are AWS Promo credits!  I posted a few of these in Slack and I have more.  Go tinker and play, go build something for yourself, give it to your kids or a friend.  
-https://smugmug.slack.com/archives/C02UUJF8E/p1669992564184239
 
 
 
