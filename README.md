@@ -1,6 +1,6 @@
 # AllThingsAWS
 Note and ramblings all about Amazon Web Services (AWS)
-
+<hr>
 My first re:Invent also happened to be the week of my first Awesomeversary.  What a great opportunity to spend time with a few Awesome folks and dig in deep on the services that run SmugMug and Flickr!  
 
 Data Beats Intuition - Intuition can get you far, but we have data available around everything that we and our customers do.  Data tells us how our services are doing, what we can do better, what our customers like and don’t like.  Multiple teams and services collect and analyze data that others may not even know exists.  It is a good reminder to ask around if you need data to help solve an issue or make a decision.
