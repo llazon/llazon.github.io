@@ -1,6 +1,8 @@
+---
 layout: page
 title: "re:Invent 2022"
 permalink: /reinvent2022
+---
 
 My first re:Invent also happened to be the week of my first Awesomeversary.  What a great opportunity to spend time with a few Awesome folks and dig in deep on the services that run SmugMug and Flickr!  
 
