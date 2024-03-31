@@ -5,5 +5,13 @@ date: 2023-10-01 00:00:00 -0000
 categories: 
 ---
 
-# template
+# Overview
+
+# Tailscale
+## ACLs
+## Auth Keys
+
+# AWS EC2
+
+# AWS ECS
 
