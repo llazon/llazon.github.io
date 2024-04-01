@@ -6,10 +6,25 @@ categories:
 ---
 
 # Overview
-A daily backup of our Parameter Store is generated via a Lambda, GPG encrypted, and stored in S3.
+Let's build a fun utility that may just save your butt one day!  We can run a daily backup of our Parameter Store that is generated via a Lambda, GPG encrypted, and stored in S3.  The result will be stored as a JSON blob making it fairly easy to parse out exactly what you need.  This will come in handy for creating a diff to see what changed from one day to the next or doing a full restore.  The output contains the metadata for each parameter store entry allowing a restore to be associated with KMS keys or an output with unencrypted values.
+
+The output looks like:
+
+    {
+    "Name": "/blah/blah/blah", 
+        "Type": "SecureString", 
+        "KeyId": "alias/blah", 
+        "LastModifiedDate": "2024-03-18 13:13:21.836000-07:00", 
+        "LastModifiedUser": "arn:aws:iam::043833176966:user/blah", 
+        "Version": 2, 
+        "Tier": "Standard", 
+        "Policies": [], 
+        "DataType": "text", 
+        "Value": "1234567890"
+    }
 
 # Write it
-Or borrow it, I don't mind.  This is meant to run as a Lambda, but runs just fine on an EC2 instance for testing.  Download here:
+Or borrow it, I don't mind.  This is meant to run as a Lambda, but runs just fine on an EC2 instance for testing.  Download or clone from here:
 
 [parameterstore-backup.py](https://github.com/llazon/llazon.github.io/blob/main/projects/parameterstore/parameterstore-backup.py)
 
@@ -89,17 +104,17 @@ Use Terraform to configure an Event that runs daily.
 # Restore it
 
 ## Make sure you have all the pieces
-Lambda: ops-parameterstore-backup
-S3: s3://smugops/parameterstore/backup/parameterstore-backup-.gpg
-GPG Public Key: blah.gpg
-GPG Private Key: blah.gpg.secret
-GPG Passphrase: keep it safe!
-How to decrypt a backup.
+- Lambda: ops-parameterstore-backup
+- S3: s3://blah/parameterstore/backup/parameterstore-backup-DATE.gpg
+- GPG Public Key: blah.gpg
+- GPG Private Key: blah.gpg.secret
+- GPG Passphrase: keep it safe!
 
 ## Setup your environment
-mkdir -p ~/parameterstore
+    mkdir -p ~/parameterstore
     cd ~/parameterstore
     aws s3 cp s3://blah/parameterstore/backup/parameterstore-backup-DATE.gpg .
+
 Copy Private Key: blah.gpg.secret to ~/parameterstore
 
 ## Decrypt
