@@ -10,13 +10,20 @@ A daily backup of our Parameter Store is generated via a Lambda, GPG encrypted, 
 
 # Write it
 
+[parameterstore-backup.py](https://github.com/llazon/llazon.github.io/blob/main/projects/parameterstore/parameterstore-backup.py)
+
 # Build it
+
+[build-parameterstore-backup.sh](https://github.com/llazon/llazon.github.io/blob/main/projects/parameterstore/build-parameterstore-backup.sh)
 
 # Configure it
 
+
 # Run it
 
+
 # Restore it
+
 
 ## Make sure you have all the pieces
 Lambda: ops-parameterstore-backup
