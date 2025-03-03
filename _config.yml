@@ -6,6 +6,5 @@ description: 'Notes and ramblings all about Amazon Web Services (AWS)!'
 remote_theme: pages-themes/modernist
 plugins:
   - jekyll-remote-theme
-  - jekyll-feed
-  - jekyll-seo-tag
+
 
