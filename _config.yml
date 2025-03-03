@@ -2,7 +2,7 @@ author: 'llazon'
 title: 'All Things AWS'
 description: 'Notes and ramblings all about Amazon Web Services (AWS)!'
 
-theme: modernist
+theme: jekyll-theme-modernist
 
 plugins:
   - jekyll-feed
