@@ -2,9 +2,9 @@ author: 'llazon'
 title: 'All Things AWS'
 description: 'Notes and ramblings all about Amazon Web Services (AWS)!'
 
-#theme: jekyll-theme-modernist
-remote_theme: pages-themes/modernist
-plugins:
-  - jekyll-remote-theme
+theme: jekyll-theme-modernist
+#remote_theme: pages-themes/modernist
+#plugins:
+#  - jekyll-remote-theme
 
 
