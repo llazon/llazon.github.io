@@ -180,7 +180,7 @@ For larger deployments, you can set up automated ACL rules in your Tailscale adm
 }
 ```
 
-## Step 7: Monitor Your Tailscale Network
+## Monitor Your Tailscale Network
 
 1. Use the Tailscale admin console to view all connected machines
 2. Implement monitoring of the tailscaled service using CloudWatch:
