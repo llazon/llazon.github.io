@@ -6,13 +6,13 @@ categories: aws networking
 tags: aws ec2 tailscale vpn linux security
 ---
 
-# Deploying Tailscale Across AWS EC2 Linux Instances
+# Tailscale on EC2
 
 [Tailscale](https://tailscale.com/) is a modern VPN built on top of the WireGuard protocol that makes creating secure networks between devices incredibly simple. That all sounds great, but in reality things are always a bit more complicated.  I highly recommend following the documentation from Tailscale, and I'll highlight the places I diverge from the docs.
 
 Let's walk through how to systematically deploy Tailscale across your AWS EC2 Linux instances with the end goal to have a fully automated system.
 
-## Prerequisites
+## Prep
 
 Before starting, ensure you have:
 
