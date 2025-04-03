@@ -8,9 +8,9 @@ tags: aws ec2 tailscale vpn linux security
 
 # Deploying Tailscale Across AWS EC2 Linux Instances
 
-[Tailscale](https://tailscale.com/) is a modern VPN built on top of the WireGuard protocol that makes creating secure networks between devices incredibly simple. By deploying Tailscale across your AWS EC2 instances, you can establish secure communication between your instances without exposing services to the public internet, simplifying your security posture and network architecture.
+[Tailscale](https://tailscale.com/) is a modern VPN built on top of the WireGuard protocol that makes creating secure networks between devices incredibly simple. That all sounds great, but in reality things are always a bit more complicated.  I highly recommend following the documentation from Tailscale, and I'll highlight the places I diverge from the docs.
 
-This guide walks through how to systematically deploy Tailscale across your AWS EC2 Linux instances, including both automated and manual approaches.
+Let's walk through how to systematically deploy Tailscale across your AWS EC2 Linux instances with the end goal to have a fully automated system.
 
 ## Prerequisites
 
@@ -20,9 +20,9 @@ Before starting, ensure you have:
 - Administrator access to these instances
 - A [Tailscale account](https://tailscale.com/start) (free tier available)
 - AWS CLI configured on your local machine
-- Basic knowledge of bash scripting
+- bash!
 
-## Step 1: Set Up Your Tailscale Account
+## Set Up Your Tailscale Account
 
 1. Sign up for a Tailscale account at [tailscale.com](https://tailscale.com/start)
 2. Navigate to the [Admin Console](https://login.tailscale.com/admin/settings/keys)
@@ -35,9 +35,9 @@ Before starting, ensure you have:
    - Click "Create"
 5. Copy the generated key for use in the installation steps
 
-## Step 2: Create Installation Script
+## Installation Script
 
-Create a bash script that can be used to install and configure Tailscale on any Linux instance:
+Here is a bash script that can be used to install and configure Tailscale on any Linux instance:
 
 ```bash
 #!/bin/bash
@@ -70,7 +70,7 @@ if [ -d /var/lib/cloud/scripts/per-boot ]; then
 fi
 ```
 
-## Step 3: Deploy to New Instances with User Data
+## Deploy to New Instances
 
 When launching new EC2 instances, you can automatically install Tailscale using the EC2 User Data feature:
 
@@ -87,7 +87,7 @@ curl -fsSL https://tailscale.com/install.sh | sh
 tailscale up --authkey YOUR_AUTH_KEY --hostname "aws-$(hostname)-$(curl -s http://169.254.169.254/latest/meta-data/instance-id | cut -c-8)"
 ```
 
-## Step 4: Deploy to Existing Instances with AWS Systems Manager
+## Deploy to Existing Instances with AWS Systems Manager
 
 For existing EC2 instances, you can use AWS Systems Manager Run Command:
 
@@ -100,7 +100,7 @@ For existing EC2 instances, you can use AWS Systems Manager Run Command:
 7. Configure other options as needed
 8. Click "Run"
 
-## Step 5: Automate Deployment with CloudFormation or Terraform
+## Automate Deployment with CloudFormation or Terraform
 
 For infrastructure-as-code, you can include Tailscale deployment in your templates.
 
@@ -139,7 +139,7 @@ resource "aws_instance" "web" {
 }
 ```
 
-## Step 6: Configure Advanced Tailscale Features
+## Configure Advanced Tailscale Features
 
 ### Subnet Routing
 
