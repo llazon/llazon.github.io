@@ -329,6 +329,7 @@ provider "aws" {
 
 ## CI/CD for Terraform
 
+{% raw %}
 ```yaml
 # .github/workflows/terraform.yml
 name: Terraform
@@ -372,6 +373,7 @@ jobs:
           terraform init
           terraform apply -auto-approve
 ```
+{% endraw %}
 
 ## Patterns to Avoid
 

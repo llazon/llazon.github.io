@@ -192,6 +192,7 @@ done < <(jq -r 'select(.archived == false) | .name' repositories.json)
 
 Run this quarterly at minimum. Set it up as a GitHub Action:
 
+{% raw %}
 ```yaml
 name: Quarterly Security Audit
 on:
@@ -218,6 +219,7 @@ jobs:
             *.csv
             *.json
 ```
+{% endraw %}
 
 ## Remediation Checklist
 
